@@ -1,0 +1,60 @@
+body {
+  font-size: 14pt;
+}
+
+.navbar, #TOC {
+  font-size: 12pt;
+}
+
+p {
+  /* text-indent: 30px; */
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+
+h1.title {
+    font-size: 50px;
+}
+
+h3.subtitle {
+  margin-top: 0px;
+}
+
+iframe {
+  border: none;
+  display: block;
+  margin: 0 auto;
+  background: #eee;
+}
+
+pre {
+  border: 0;
+}
+
+pre.numberSource {
+  border-left: none;
+}
+
+pre > code.sourceCode > span > a:first-child::before {
+   text-decoration: none;
+}
+
+.tocify {
+  border-radius: 0px;
+  border: none;
+}
+
+figure > img {
+  display: block;
+  margin: auto;
+}
+
+figcaption {
+  text-align: center;
+  margin-top: 10px;
+}
+
+#TOC {
+  margin-top: 35px !important;
+}
