@@ -255,21 +255,6 @@ $(document).ready(function () {
 </div>
 
 
-<div class="jumbotron">
-<h3>
-When Art Meets Analytics
-</h3>
-<h1>
-Visually Appealing, <br> Insightful Stories
-</h1>
-<p>
-Got data to be explored?
-</p>
-<p>
-<a class="btn btn-primary btn-lg" href="email.html" role="button">Let’s
-Work Together!</a>
-</p>
-</div>
 <style>
   .thumbnail p,
   .thumbnail h3 {
@@ -281,7 +266,40 @@ Work Together!</a>
   .thumbnail h3 {
     font-size: 24px;
   }
+  .jumbotron {
+    background-color: rgba( 249, 249, 249, 0.8 ) !important;
+  }
+  .jumbotron,
+  .jumbotron p {
+    text-align: center;
+  }
+  .jumbotron-background {
+    background-image: url( logo.svg );
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #f9f9f9;
+  }
+}
 </style>
+<div class="jumbotron-background">
+<p> </p>
+</div>
+<div class="jumbotron">
+<h3>
+When Art Meets Analytics
+</h3>
+<h1>
+Visually Appealing <br> Insightful Stories
+</h1>
+<p>
+Got data to be explored?
+</p>
+<p>
+<a class="btn btn-primary btn-lg" href="email.html" role="button">Let’s
+Work Together!</a>
+</p>
+</div>
 <div class="row">
 
 <div class="col-sm-6 col-md-4">
@@ -316,6 +334,26 @@ Emphasize on the hope!
 </div>
 </div>
 </div>
+<script>
+  const originalContentMargin = +$(".jumbotron").css("margin-bottom").replace("px","");
+  function setBackground() {
+    const jumbotronWidth = $(".jumbotron").outerWidth();
+    const jumbotronHeight = $(".jumbotron").outerHeight();
+    const sideLength = (jumbotronWidth > jumbotronHeight ? Math.max : Math.min)( jumbotronWidth , jumbotronHeight  );
+    const contentMargin = sideLength - jumbotronHeight;
+    $(".jumbotron-background").width( sideLength );
+    $(".jumbotron-background").height( sideLength );
+    if ( contentMargin > 0 ) {
+      $(".jumbotron").css( "margin-top", `-${ jumbotronHeight + contentMargin/2 }px` );
+      $(".jumbotron").css( "margin-bottom", `${ contentMargin/2 + originalContentMargin }px` );
+    } else {
+      $(".jumbotron").css( "margin-top", `-${ sideLength }px` );
+      $(".jumbotron").css( "margin-bottom", `${ originalContentMargin }px` );
+    }
+  }
+  setBackground();
+  window.onresize = function () { setBackground(); };
+</script>
 
 
 
